@@ -8,7 +8,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const inputHarga = inputHargaBarang.value
         ev.preventDefault()
 
-        addContainerItem(inputBarang, inputHarga)
+        if(inputBarang === ""|| inputHarga === ""){
+            alert('kolom tidak boleh kosong')
+        } else{
+            addContainerItem(inputBarang, inputHarga)
+        }
 
         inputNamaBarang.value = ''
         inputHargaBarang.value = ''
