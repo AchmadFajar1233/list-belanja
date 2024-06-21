@@ -30,12 +30,18 @@ background-position: 0 0, 33px  33px;
     margin: auto;
     margin-top: 150px;
     border: 1px solid black;
-    padding: 10vh;
+    padding: 15vh;
     background: rgba(65, 65, 65, 0.11);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
     border: 1px solid rgba(255, 255, 255, 0.582);
     border-radius: 25px;
+}
+.container .item-container{
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .container .input-container{
     margin-bottom: 20px;
@@ -43,11 +49,15 @@ background-position: 0 0, 33px  33px;
 .container .input-container .inputBarangHarga input{
     color: black;
     padding-left: 5px;
+    width: 39vh;
+    height: 4vh;
 }
 .container .input-container .submit input{
     color: black;
     padding: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
+    font-size: 15px;
+    width: 15vh;
     background-color: white;
     border-radius: 10px;
     cursor: pointer;
@@ -60,7 +70,7 @@ background-position: 0 0, 33px  33px;
     border: 1px solid white;
 }
 #alertKolomKosong{
-    color: red;
+    color: rgb(255, 49, 49);
     font-size: 12px;
     display: block;
 }

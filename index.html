@@ -8,24 +8,26 @@
 </head>
 <body>
     <div class="container">
-      <h1>List Belanja</h1>
-      <div class="input-container">
-        <form id="form">
-          <div class="inputBarangHarga">
-            <div class="input">
-              <label for="barang" style="display: block;">Nama Barang</label>
-              <input type="text" name="barang" id="barang">
+      <div class="item-container">
+        <h1>List Belanja</h1>
+        <div class="input-container">
+          <form id="form">
+            <div class="inputBarangHarga">
+              <div class="input">
+                <label for="barang" style="display: block;">Nama Barang</label>
+                <input type="text" name="barang" id="barang">
+              </div>
+              <div class="input">
+                <label for="harga" style="display: block;">Harga Barang</label>
+                <input type="number" name="harga" id="harga">
+                <span id="alertKolomKosong"></span>
+              </div>
             </div>
-            <div class="input">
-              <label for="harga" style="display: block;">Harga Barang</label>
-              <input type="number" name="harga" id="harga">
-              <span id="alertKolomKosong"></span>
+            <div class="submit">
+              <input type="submit" value="Simpan" id="submit">
             </div>
-          </div>
-          <div class="submit">
-            <input type="submit" value="Simpan" id="submit">
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
     <script src="https://kit.fontawesome.com/2c3cc443d2.js" crossorigin="anonymous"></script>

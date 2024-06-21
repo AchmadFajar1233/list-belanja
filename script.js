@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         ev.preventDefault()
 
         if(inputBarang === ""|| inputHarga === ""){
-            alertKolomKosong.innerText = 'Kolom tidak boleh kosong'
+            alertKolomKosong.innerText = 'Kolom tidak boleh kosong!'
         } else{
             alertKolomKosong.innerText = ''
             addContainerItem(inputBarang, inputHarga)
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const container = document.querySelector('.container')
         newElement.setAttribute('class', 'namaHargaBarang')
         newElement.setAttribute('id', 'hiddenContainer')
+        const itemContainer = document.querySelector('.item-container')
 
         const newListHiddenElement = document.createElement('div')
         newListHiddenElement.setAttribute('class', 'listHidden')
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         barangHarga.append(barang, harga)
         newListHiddenElement.append(barangHarga)
         newElement.append(newListHiddenElement)
-        container.append(newElement)
+        itemContainer.append(newElement)
         
     }
 
