@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const inputNamaBarang = document.getElementById('barang')
     const inputHargaBarang = document.getElementById('harga')
     const submitForm = document.getElementById('submit')
+    const alertKolomKosong = document.getElementById('alertKolomKosong')
 
     submitForm.addEventListener('click', (ev)=>{
         const inputBarang = inputNamaBarang.value
@@ -9,8 +10,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
         ev.preventDefault()
 
         if(inputBarang === ""|| inputHarga === ""){
-            alert('kolom tidak boleh kosong')
+            alertKolomKosong.innerText = 'Kolom tidak boleh kosong'
         } else{
+            alertKolomKosong.innerText = ''
             addContainerItem(inputBarang, inputHarga)
         }
 

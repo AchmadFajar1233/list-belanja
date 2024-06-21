@@ -28,6 +28,7 @@ background-position: 0 0, 33px  33px;
 }
 .container{
     margin: auto;
+    margin-top: 150px;
     border: 1px solid black;
     padding: 10vh;
     background: rgba(65, 65, 65, 0.11);
@@ -57,6 +58,11 @@ background-position: 0 0, 33px  33px;
     background: none;
     color: white;
     border: 1px solid white;
+}
+#alertKolomKosong{
+    color: red;
+    font-size: 12px;
+    display: block;
 }
 .listHidden{
     margin-top: 10px;
