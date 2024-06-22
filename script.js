@@ -3,10 +3,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const inputHargaBarang = document.getElementById('harga')
     const submitForm = document.getElementById('submit')
     const alertKolomKosong = document.getElementById('alertKolomKosong')
-
+    const arrayTotal = []
     submitForm.addEventListener('click', (ev)=>{
         const inputBarang = inputNamaBarang.value
         const inputHarga = inputHargaBarang.value
+        const textTotal = document.getElementById('textTotal')
         ev.preventDefault()
 
         if(inputBarang === ""|| inputHarga === ""){
@@ -16,13 +17,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
             addContainerItem(inputBarang, inputHarga)
         }
 
+        arrayTotal.push(parseInt(inputHarga))
+        const totalBelanja = arrayTotal.reduce((accumulator, curentValue)=>{
+            return accumulator + curentValue
+        }, 0)
+
+        textTotal.innerText = `Total belanja: Rp.${totalBelanja}`
+
         inputNamaBarang.value = ''
         inputHargaBarang.value = ''
     })
 
     function addContainerItem(namaBarng, harga_barang){
         const newElement = document.createElement('div')
-        const container = document.querySelector('.container')
         newElement.setAttribute('class', 'namaHargaBarang')
         newElement.setAttribute('id', 'hiddenContainer')
         const itemContainer = document.querySelector('.item-container')
@@ -38,7 +45,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         barang.setAttribute('class', 'barang')
         harga.setAttribute('class', 'harga')
         barang.innerText = 'Nama Barang: '
-        harga.innerText = ('Harga')
+        harga.innerText = ('Harga:')
 
         const namaBarangSpan = document.createElement('span')
         const hargaSpan = document.createElement('span')

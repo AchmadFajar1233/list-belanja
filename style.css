@@ -52,6 +52,9 @@ background-position: 0 0, 33px  33px;
     width: 39vh;
     height: 4vh;
 }
+.inputBarangHarga label{
+    padding: 5px 0;
+}
 .container .input-container .submit input{
     color: black;
     padding: 5px;
@@ -89,4 +92,7 @@ background-position: 0 0, 33px  33px;
 .listHidden .barangHarga .harga #namaHarga{
     display: block;
     font-size: 20px;
+}
+.textTotalContainer{
+    margin-top: 20px;
 }
