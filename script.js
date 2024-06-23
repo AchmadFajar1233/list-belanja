@@ -17,12 +17,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             addContainerItem(inputBarang, inputHarga)
         }
 
-        arrayTotal.push(parseInt(inputHarga))
-        const totalBelanja = arrayTotal.reduce((accumulator, curentValue)=>{
-            return accumulator + curentValue
-        }, 0)
-
-        textTotal.innerText = `Total belanja: Rp.${totalBelanja}`
+        addTextTotal(arrayTotal, textTotal)
 
         inputNamaBarang.value = ''
         inputHargaBarang.value = ''
@@ -64,6 +59,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
         newElement.append(newListHiddenElement)
         itemContainer.append(newElement)
         
+    }
+
+    const addTextTotal = (arrayTotal, textTotal)=>{
+        if(inputHargaBarang.value !== ""){
+            arrayTotal.push(parseInt(inputHargaBarang.value))
+        }
+        const totalBelanja = arrayTotal.reduce((accumulator, currentValue)=>{
+            return accumulator + currentValue
+        }, 0)
+        textTotal.innerText = `harga total: ${totalBelanja}`
     }
 
 })
