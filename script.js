@@ -51,18 +51,32 @@ document.addEventListener('DOMContentLoaded', ()=>{
         namaBarangSpan.innerText = namaBarng
         hargaSpan.innerText = harga_barang
 
+        const icon = document.createElement('i')
+        icon.setAttribute("class", "fa-solid fa-trash")
+        const deleteButton = document.createElement('span')
+        deleteButton.append(icon)
+        deleteButton.style.cursor = 'pointer'
+        deleteButton.addEventListener('click', () => {
+            newElement.remove()
+            const index = arrayTotal.indexOf(parseInt(harga_barang))
+            if (index !== -1) {
+                arrayTotal.splice(index, 1)
+            }
+            addTextTotal(arrayTotal, document.getElementById('textTotal'))
+        })
+
 
         barang.append(namaBarangSpan)
         harga.append(hargaSpan)
         barangHarga.append(barang, harga)
-        newListHiddenElement.append(barangHarga)
+        newListHiddenElement.append(barangHarga, deleteButton)
         newElement.append(newListHiddenElement)
         itemContainer.append(newElement)
         
     }
 
     const addTextTotal = (arrayTotal, textTotal)=>{
-        if(inputHargaBarang.value !== ""){
+        if(inputHargaBarang.value !== "" && inputNamaBarang.value !== ""){
             arrayTotal.push(parseInt(inputHargaBarang.value))
         }
         const totalBelanja = arrayTotal.reduce((accumulator, currentValue)=>{
